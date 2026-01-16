@@ -16,7 +16,7 @@ public class Mapper {
     public static ProductoDTO toDTO(Producto p) {
         if (p == null) return null;
 
-        return Pr       oductoDTO.builder()
+        return ProductoDTO.builder()
                 .id(p.getId())
                 .nombre(p.getNombre())
                 .categoria(p.getCategoria())
