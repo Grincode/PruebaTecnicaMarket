@@ -20,7 +20,7 @@ public class VentaController {
         return ResponseEntity.ok(ventaService.traerVentas());
     }
 
-  
+
     @PostMapping
     public ResponseEntity<VentaDTO> create(@RequestBody VentaDTO dto) {
         VentaDTO created = ventaService.crearVenta(dto);
