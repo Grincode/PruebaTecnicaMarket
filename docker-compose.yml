@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  pruebatecsuper:
+    image: mysql:8.0.33
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Thdgg345
+      MYSQL_DATABASE: pruebatecsuper
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 10
+
+  gestionventas:
+    build: GestionVentas
+    mem_limit: 1024m
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://pruebatecsuper:3306/pruebatecsuper?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Thdgg345
+      JAVA_TOOL_OPTIONS: "-Xms128m -Xmx512m"
+    depends_on:
+      pruebatecsuper:
+        condition: service_healthy
+    restart: always
