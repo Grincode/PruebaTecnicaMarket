@@ -11,7 +11,7 @@ La API permite gestionar:
 - ✔️ Registrar **productos** con sus respectivos precios.
 - ✔️ Administrar **sucursales** donde se venden los productos.
 - ✔️ Registrar **ventas** indicando productos y cantidades.
-- ✔️ Consultar reportes como:
+- ✔️ Consultar reportes como (En Progreso):
   - Ventas por sucursal
   - Ingresos totales
   - Productos más vendidos
